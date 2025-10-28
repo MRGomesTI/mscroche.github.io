@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🌸 MSCROCHÊ 🌸</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 0;
+      color: #4b3b2b;
+    }
+    header {
+      background-color: #f2c1a0;
+      padding: 30px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    nav {
+      background-color: #e8b89c;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+    }
+    nav button {
+      background: none;
+      border: none;
+      font-size: 1em;
+      font-weight: bold;
+      color: #4b3b2b;
+      cursor: pointer;
+    }
+    nav button:hover {
+      text-decoration: underline;
+    }
+    section {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    section.active {
+      display: block;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    footer {
+      background-color: #f2c1a0;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    /* Estilo do formulário de contato */
+    .form-group {
+      margin: 15px 0;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    .form-group button {
+      background-color: #f2c1a0;
+      color: #4b3b2b;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .form-group button:hover {
+      background-color: #e8b89c;
+    }
+
+    /* Estilo do QR Code */
+    .qrcode-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .qrcode-container img {
+      max-width: 200px;
+      border: 2px solid #e8b89c;
+      border-radius: 8px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌸 MSCROCHÊ 🌸</h1>
+    <p><b>Um cantinho para compartilhar amor e arte em forma de crochê!</b></p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('projetos')">Projetos</button>
+    <button onclick="showSection('dicas')">Dicas</button>
+    <button onclick="showSection('contato')">Contato</button>
+  </nav>
+
+  <section id="projetos" class="active">
+    <h2>🧶 Projetos</h2>
+    <p>Trabalho com algumas peças de pronta entrega e sob encomenda!
+      Seguem alguns modelos que já foram feitos e entregues com satisfação dos clientes:
+    </p>
+    <div class="gallery">
+      <!-- ⚠️ IMPORTANTE: caminhos locais não funcionam online. Substitua por URLs públicas -->
+      <img src="https://via.placeholder.com/250?text=Tapete+Mandala" alt="Tapete Mandala">
+      <img src="https://via.placeholder.com/250?text=Bolsa+de+Crochê" alt="Bolsa de Crochê">
+      <img src="https://via.placeholder.com/250?text=Boina" alt="Boina">
+    </div>
+    <p style="margin-top:20px;">Em breve, mais projetos serão adicionados aqui!</p>
+  </section>
+
+  <section id="dicas">
+    <h2>💡 Dicas</h2>
+    <p>Quer aprender crochê ou melhorar suas técnicas? Veja minhas dicas favoritas:</p>
+    <ul>
+      <li>Como escolher o fio ideal para cada projeto</li>
+      <li>Diferença entre agulhas de alumínio e bambu</li>
+      <li>Como ler gráficos de crochê</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2>📬 Contato</h2>
+    <p>Preencha o formulário abaixo para me enviar uma mensagem:</p>
+
+    <form id="contatoForm">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="telefone">Telefone (com DDD):</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Enviar Mensagem</button>
+      </div>
+    </form>
+
+    <div class="qrcode-container">
+      <h3>💳 Apoie meu trabalho!</h3>
+      <p>Escaneie o QR Code abaixo para fazer um pagamento ou doação:</p>
+      <!-- Substitua esta imagem pelo seu QR Code real quando tiver -->
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com/pagamento" alt="QR Code de Pagamento">
+      <p style="font-size:0.9em; margin-top:8px;">(Você pode substituir este QR Code pelo seu depois)</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 - Blog de Crochê. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    // Evita o envio real do formulário (só para demonstração)
+    document.getElementById('contatoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Mensagem enviada com sucesso! Em breve entrarei em contato. 💌');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
